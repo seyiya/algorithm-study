@@ -1,23 +1,22 @@
 
-
 public class InsertionSort01 { // 삽입 정렬을 이용해 주어진 배열 정렬하기(오름차순)
 
 	public static void main(String[] args) {
 
 		int i, j, temp;
 
-		int array[] = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 }; // 원소의 갯수가 10개인 배열
+		int array[] = { 11, 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 }; // 원소의 갯수가 10개인 배열
 
 		// 주어진 배열 출력
 		System.out.print("주어진 배열: ");
-		for (i = 0; i < 10; i++) {
+		for (i = 0; i < array.length; i++) {
 			System.out.printf("%d ", array[i]);
 		}
 
 		// 삽입 정렬을 이용해 정렬
-		for (i = 0; i < 9; i++) {
+		for (i = 0; i < array.length-1; i++) {
 			j = i; // 현재 정렬할 원소 선택
-			while (array[j] > array[j + 1]) {
+			while (j>=0 && array[j] > array[j + 1]) {
 				temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
@@ -27,7 +26,7 @@ public class InsertionSort01 { // 삽입 정렬을 이용해 주어진 배열 �
 
 		// 새로 정렬된 배열 출력
 		System.out.print("\n새로 정렬된 배열: ");
-		for (i = 0; i < 10; i++) {
+		for (i = 0; i < array.length; i++) {
 			System.out.printf("%d ", array[i]);
 		}
 	}
